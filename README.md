@@ -18,64 +18,38 @@ This project showcases a comprehensive digital forensic investigation workflow u
 
 <h2>Tools used</h2>
 
-- <b>Volatility3: Memory analysis to extract artifacts from RAM dumps.
-- Wireshark (Network Traffic Analyzer)
-- Ubuntu Linux VM (Traffic generation environment)
-- Traffic Simulation Tools:</b>
- ping, hping3, curl, wget, and nmap
+- <b>Volatility3:</b> Memory analysis to extract artifacts from RAM dumps.
+- <b>Autopsy:</b> Open-source forensic platform for disk and file system analysis.
+- <b>FTK Imager:</b> Forensic imaging tool to create, verify, and extract data from disk images.
 <br></br>
 
+<h2>Dataset</h2>
+
+- Known memory dumps and forensic images sourced from:
+  -(add dataset dump link here)
+
+<br></br>
+
+<h2>Setup Instructions</h2>
+
+1. <b>Volatility3</b>
+
+- Clone repository: git clone https://github.com/volatilityfoundation/volatility3.git
+- Install dependencies: pip install -r requirements.txt
+- Test the setup: python3 vol.py --help
+
+2. <b>Autopsy</b>
+
+- Download and install from Autopsy.
+- Follow OS-specific installation guides.
+
+3. <b>FTK Imager</b>
+
+- Download and install from AccessData.
+Verify functionality for imaging and data extraction.
 
 
-<h2>Project Setup</h2>
 
-<h3>1. Environment Setup</h3>
-
-- Linux VM configuration:
-  - Installed and configured an Ubuntu virtual machine.
-  - Ensured all necessary tools and dependencies, such as Snort and Wireshark, were installed.
-  - Configured network interfaces to route traffic for monitoring.
- - Snort Configuration:
-   - Installed Snort 3.3.5.0.
-   - Edited Snort configuration files to enable traffic capture on specific interfaces.
-   - Created a custom set of rules to detect anomalies in network traffic
-
-
-<h3>2. Traffic Simulation </h3>
-Simulated network activities to generate logs for analysis:
-
-- Normal Traffic:
-  - Browsing websites using curl and wget.
-  - Pinging local and remote hosts.
-- Malicious Traffic:
-  - Port scanning with nmap.
-  - Simulated ICMP floods with hping3.
-
-
-<h2>Snort Rules</h2>
-Developed and tested custom Snort rules to identify specific network anomalies:
-
-- Detect ICMP flood attacks.
-- Identify unauthorized HTTP requests.
-- Alert on suspicious port scanning activities.
-
-<h2>Analysis</h2>
-
-- Wireshark:
-  - Used filters to isolate and inspect specific packets (e.g., icmp, http, tcp.port == 80).
-  - Analyzed captured traffic to identify patterns and anomalies flagged by Snort.
-- Snort:
-  - Reviewed alert logs to verify rule effectiveness.
-  - Correlated logs with Wireshark captures for deeper insights.
- 
- <h2>Results</h2>
-
- - Successfully detected ICMP floods and port scans with custom Snort rules.
- - Correlated Snort alerts with Wireshark visualizations for comprehensive traffic analysis.
- - Gained a deeper understanding of intrusion detection and network packet analysis.
-
-<h2>Conclusion</h2>
-This project provided hands-on experience in network traffic monitoring, intrusion detection, and packet analysis. The integration of Snort and Wireshark allowed for a robust approach to identifying and understanding network anomalies. Future work could include incorporating additional detection tools or automating the analysis process.
 
 <!--
  ```diff
